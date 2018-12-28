@@ -25,4 +25,8 @@ export class CatEditComponent implements OnInit {
     );
   }
 
+  onSubmitClicked2(category:HTMLInputElement,status:HTMLInputElement){
+        this.categoryService.catlist[this.id].category=category.value;
+        this.categoryService.catlist[this.id].status=status.checked;
+  }
 }

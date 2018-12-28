@@ -7,24 +7,29 @@
           class="form-control"
           id="task"
           aria-describedby="emailHelp"
-          name="name"
+          name="name"CategoryService
           [(ngModel)]="name">
       </div>
       <div class="form-group">
         <label for="category">Category</label>
-        <input type="text"
+        <select id="category"
           class="form-control"
           name="category"
           [(ngModel)]="category">
+          <option *ngFor="let cat of cname ">
+            {{cat.category}}
+          
+          </option>
+          </select>
       </div>
       <div class="form-group form-check">
         <input type="checkbox"
           class="form-check-input"
-          name="status"
+          name="status" 
           [(ngModel)]="status">
         <label class="form-check-label" for="status">Completed</label>
       </div>
-      <button class="btn btn-warning mr-2">Clear</button>
+      <button class="btn btn-warning mr-2" type = "reset">Clear</button>
       <button class="btn btn-primary" (click)="onSubmitClicked()">Submit</button>
     </form>
   </div>
